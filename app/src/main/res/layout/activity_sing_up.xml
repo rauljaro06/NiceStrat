@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@drawable/gradient"
+    >
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:id="@+id/logo"
+        android:src="@drawable/thunder_svgrepo_com"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="48dp"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:id="@+id/til1"
+        app:layout_constraintEnd_toEndOf="@+id/linea2"
+        app:layout_constraintStart_toStartOf="@+id/linea1"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:startIconDrawable="@drawable/usericon"
+
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/white"
+            android:hint="Username"
+            android:paddingStart="48dp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/til2"
+        app:layout_constraintEnd_toEndOf="@+id/linea2"
+        app:layout_constraintStart_toStartOf="@+id/linea1"
+        app:layout_constraintTop_toBottomOf="@+id/til1"
+        app:startIconDrawable="@drawable/outline_alternate_email_24"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/white"
+            android:hint="Email"
+            android:paddingStart="48dp"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/til3"
+        app:layout_constraintEnd_toEndOf="@+id/linea2"
+        app:layout_constraintStart_toStartOf="@+id/linea1"
+        app:layout_constraintTop_toBottomOf="@+id/til2"
+        app:startIconDrawable="@drawable/outline_key_24"
+        app:passwordToggleEnabled="true"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/white"
+            android:hint="Password"
+            android:paddingStart="48dp"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@id/til4"
+        app:layout_constraintEnd_toEndOf="@+id/linea2"
+        app:layout_constraintStart_toStartOf="@+id/linea1"
+        app:layout_constraintTop_toBottomOf="@+id/til3"
+        app:startIconDrawable="@drawable/outline_key_24"
+        app:passwordToggleEnabled="true"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/white"
+            android:hint="Repeat Password"
+            android:paddingStart="48dp"
+
+            />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/linea1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/linea2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button"
+        app:layout_constraintEnd_toEndOf="@+id/linea2"
+        app:layout_constraintStart_toStartOf="@+id/linea1"
+        app:layout_constraintTop_toBottomOf="@+id/til4"
+        android:text="Create"
+        android:id="@+id/loginbuton"
+        android:backgroundTint="@color/buttoncustom"
+        android:onClick="openMain"
+        />
+    <Button
+        style="@style/buttonLined"
+        app:layout_constraintEnd_toEndOf="@+id/linea2"
+        app:layout_constraintStart_toStartOf="@+id/linea1"
+        app:layout_constraintTop_toBottomOf="@+id/loginbuton"
+        android:text="Cancel"
+        android:id="@+id/singupbuton"
+        android:onClick="openMain"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
