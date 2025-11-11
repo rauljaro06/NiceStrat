@@ -11,12 +11,23 @@
     <ImageView
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:id="@+id/logo"
+        android:id="@+id/logosplash"
         android:src="@drawable/thunder_svgrepo_com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="150dp"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/barrio"
+        android:text="@string/app_name"
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@id/logosplash"
+        app:layout_constraintStart_toStartOf="@id/logosplash"
+        app:layout_constraintTop_toBottomOf="@id/logosplash"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
