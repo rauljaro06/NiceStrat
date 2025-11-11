@@ -121,5 +121,6 @@
         app:layout_constraintTop_toBottomOf="@+id/loginbuton"
         android:text="SINGUP"
         android:id="@+id/singupbuton"
+        android:onClick="openSingUp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

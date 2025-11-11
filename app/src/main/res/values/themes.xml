@@ -1,9 +1,23 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.NiceStrat" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.NiceStrat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    </style>
+
+    <style name="TransparentActionBar" parent="Widget.AppCompat.ActionBar">
+
+        <item name="background">@android:color/transparent</item>
+        <item name="displayOptions">showHome </item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="Theme.NiceStrat.ActionBar" parent="Theme.MaterialComponents.DayNight">
+        <item name="actionBarStyle">@style/TransparentActionBar</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/black</item> -->
     </style>
 
     <style name="Theme.NiceStrat" parent="Base.Theme.NiceStrat" />
+    <style name="Theme.NiceStrat.NoActionBar" parent="Base.Theme.NiceStrat" />
 </resources>
