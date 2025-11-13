@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,9 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NiceStrat">
         <activity
-            android:name=".Splash"
+            android:name=".Profile"
             android:exported="true"
-            >
+            android:theme="@style/Theme.NiceStrat.ActionBarTITULO"/>
+        <activity
+            android:name=".Splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,9 +34,7 @@
         <activity
             android:name=".Login"
             android:exported="true"
-            android:theme="@style/Theme.NiceStrat.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.NiceStrat.NoActionBar"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

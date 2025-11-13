@@ -12,8 +12,21 @@
         <item name="android:elevation">0dp</item>
     </style>
 
+    <style name="TransparentActionBarTITULO" parent="Widget.AppCompat.ActionBar">
+
+        <item name="background">@android:color/transparent</item>
+        <item name="displayOptions">showTitle </item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
     <style name="Theme.NiceStrat.ActionBar" parent="Theme.MaterialComponents.DayNight">
         <item name="actionBarStyle">@style/TransparentActionBar</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/black</item> -->
+    </style>
+
+    <style name="Theme.NiceStrat.ActionBarTITULO" parent="Theme.MaterialComponents.DayNight">
+        <item name="actionBarStyle">@style/TransparentActionBarTITULO</item>
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/black</item> -->
     </style>

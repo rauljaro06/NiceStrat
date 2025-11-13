@@ -1,34 +1,50 @@
+# Nombre del Proyecto
+
+NiceStrart
+
+
 ## Descripción
 
-Aquí se encuentran el código de nuestro (Java), los recursos (layouts, drawables, valores),  
-Todo esto para dar acabo nuestra aplicacion`NiceStrat`.
+Este proyecto es una aplicación Android creada con Java en Android Studio. Permite a los usuarios registrarse e iniciar sesión, además de ofrecer una interfaz principal para interactuar con diversas funcionalidades
+mas adelante incorporaremos nuevas mejoras a lo largo del tiempo
+
+## Requisitos
+
+- JDK 11 o superior (recomendado según configuración del proyecto).
+- Android Studio (obligatorio para abrir y ejecutar el proyecto).
+
+## Estructura del Proyecto
+
+A continuación hare una breve descripcion de la estructura principal del proyecto:
+
+- `src/main/java/SingUp.java` - Código fuente para la funcionalidad de registro de nuevos usuarios
+- `src/main/java/Login.java` - Código fuente para la pantalla de inicio de sesión
+- `src/main/java/MainActivity.java` - Codigo fuente para la vista principal de la aplicacion
+- `src/main/res/layout/activity_login.xml` - Layout para la pantalla de inicio de sesión
+- `src/main/res/layout/activity_main.xml` - Layout para la vista principal de la aplicacion
+- `src/main/res/layout/activity_sing_up.xml` - Layout para la pantalla de registro de usuarios
+- `src/main/AndroidManifest.xml` - Archivo de configuracion del proyecto
+
+## Capturas de Pantalla
+
+A continuación, se presentan algunas capturas de pantalla de como se verian las pantallas principales de la aplicación:
+
+### Registro
+Esta es nuestra pantalla de registro
+![Registrar](img/foto1.png)
+
+### Inicio de Sesión
+Esta es la pantalla en la cual realizamos el login a la aplicaion 
+![Login](img/foto2.png)
+
+### Vista Principal
+Este seria el main de nuestra aplicacion
+![Main](img/foto3.png)
+
+### Pantalla de Carga
+Esta es la pantalla de carga de la aplicacion al inicializarla 
+![Splash](img/foto4.png)
 
 
-- `src/main/java/SingUp.java` - código fuente del backend de la ventana asociada al inicio de una cuenta nueva.
-![registrar.png](img/foto1.png)
-- `src/main/java/Login.java` - código fuente del backend de la ventana en la cual iniciamos sesion.
-![login.png](img/foto2.png)
-- `src/main/java/MainActivity.java` - Aqui tenemos el código fuente del backend de la foto que vemos a continuacion.
-![main.png](img/foto3.png)
 
 
-## Requisitos del programa 
-
-- JDK (11+ recomendado, según configuración del proyecto).
-- Android Studio (obligatorio).
-
-## Estructura 
-
-- `src/main/java/Login.java` - código fuente del backend de la ventana asociada al inicio de sesion.
-- `src/main/java/MainActivity.java` - código fuente del backend de la vista principal.
-- `src/main/java/SingUp.java` - código fuente del backend de la ventana asociada al registro de una cuenta nueva.
-- `src/main/res/layout/activity_login.xml` - Aqui se encuentra el codigo del frontent de la ventana asociada al inicio de sesion.
-- `src/main/res/layout/activity_main.xml` - Aqui se encuentra el codigo del frontent de la vista principal.
-- `src/main/res/layout/activity_sing_up.xml` - Aqui se encuentra el codigo del frontent de la ventana asociada al registro de una cuenta nueva.
-- `src/main/AndroidManifest.xml` - manifest del módulo.
-
-## Cómo contribuir
-
-1. Crea un branch con un nombre descriptivo (por ejemplo `feature/nombre` o `fix/descripcion`).
-2. Abre un Pull Request hacia la rama destino (ej. `develop` o `main`) con una descripción clara de los cambios.
-4. Incluye screenshots o pasos para reproducir si el cambio afecta la UI.
