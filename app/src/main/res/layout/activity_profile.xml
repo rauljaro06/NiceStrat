@@ -25,9 +25,9 @@
         app:layout_constraintTop_toBottomOf="@+id/imagenProfile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="NOMBRE"
+        android:text="PATO"
         android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:textSize="30sp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,9 +36,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textoNMombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="DESCRIPCION"
+        android:text="23 AÑOS EN LA CHARCA"
         android:textColor="@color/black"
-        android:textSize="20sp"/>
+        android:textSize="18sp"/>
 
 
 
