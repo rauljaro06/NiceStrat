@@ -31,6 +31,12 @@
         <!-- <item name="colorPrimary">@color/black</item> -->
     </style>
 
+    <style name="Theme.NiceStrat.ActionBarINICIO" parent="Theme.MaterialComponents.DayNight">
+
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/black</item> -->
+    </style>
+
     <style name="Theme.NiceStrat" parent="Base.Theme.NiceStrat" />
     <style name="Theme.NiceStrat.NoActionBar" parent="Base.Theme.NiceStrat" />
 </resources>

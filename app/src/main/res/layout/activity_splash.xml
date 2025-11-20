@@ -10,23 +10,22 @@
     >
 
     <ImageView
+        android:id="@+id/backView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/backView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/logosplash"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:id="@+id/logosplash"
+        android:layout_marginBottom="148dp"
         android:src="@drawable/thunder_svgrepo_com"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="150dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
