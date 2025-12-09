@@ -1,3 +1,4 @@
+// java
 package com.example.nicestrat;
 
 import android.annotation.SuppressLint;
@@ -103,18 +104,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean onContextItemSelected(MenuItem item) {
-//        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)
-//                item.getMenuInfo();
         if (item.getItemId() == R.id.item1) {
-            Toast toast = Toast.makeText(this, "Item copied",
-                    Toast.LENGTH_LONG);
-            toast.show();
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle("Elemento")
+                    .setMessage("Item copiado")
+                    .setPositiveButton("OK", null)
+                    .show();
+            return true;
         } else if (item.getItemId() == R.id.item2) {
-            Toast toast2 = Toast.makeText(this, "Downloading item...",
-                    Toast.LENGTH_LONG);
-            toast2.show();
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle("Descarga")
+                    .setMessage("Downloading item...")
+                    .setPositiveButton("OK", null)
+                    .show();
+            return true;
         }
-        return false;
+        return super.onContextItemSelected(item);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,11 +131,31 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.item2) {
-            Toast toast = Toast.makeText(this, "Settings", Toast.LENGTH_SHORT);
-            toast.show();
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle("Ajustes")
+                    .setMessage("Abrir ajustes")
+                    .setPositiveButton("Abrir", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Aquí puedes abrir la actividad de ajustes si procede
+                        }
+                    })
+                    .setNegativeButton("Cancelar", null)
+                    .show();
+            return true;
         } else if (id == R.id.item1) {
-            Toast toast2 = Toast.makeText(this, "Copy", Toast.LENGTH_SHORT);
-            toast2.show();
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle("Copiar")
+                    .setMessage("¿Deseas copiar el elemento?")
+                    .setPositiveButton("Copiar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Acción de copiar si procede
+                        }
+                    })
+                    .setNegativeButton("Cancelar", null)
+                    .show();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -139,11 +164,7 @@ public class MainActivity extends AppCompatActivity {
             mOnRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
 
         public void onRefresh() {
-            //Toast toast0 = Toast.makeText(MainActivity.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
-            //toast0.show();
-
             final ConstraintLayout mLayout = findViewById(R.id.myswipe);
-
 
             Snackbar snackbar = Snackbar
                     .make(mLayout, "fancy a Snack while you refresh?", Snackbar.LENGTH_SHORT)
@@ -156,8 +177,6 @@ public class MainActivity extends AppCompatActivity {
                     });
 
             snackbar.show();
-//
-
 
             miVisorWeb.reload();
             swipeLayout.setRefreshing(false);
