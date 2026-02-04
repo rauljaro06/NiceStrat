@@ -1,6 +1,5 @@
 package com.example.nicestrat;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout swipeLayout;
     private WebView miVisorWeb;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
         swipeLayout = findViewById(R.id.myswipe);
         swipeLayout.setOnRefreshListener(mOnRefreshListener);
 
-
         miVisorWeb = (WebView) findViewById(R.id.visitaweb);
+        //String html2 = "<html><body><h1>Hola Mundo</h1><br><br><br><br><br><p>Esto es una prueba de WebView</p><img alt='NO CARGA NI MIERDA' src='https://thispersondoesnotexist.com' /></body></html>";
+        //miVisorWeb.loadDataWithBaseURL(null, html2, "text/html", "UTF-8", null);
         String html = "<html>" +
                 "<head><style>" +
                 "html, body { margin:0; padding:0; height:100%; overflow:hidden; }" +
@@ -53,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 "<body>" +
                 "<img src='https://thispersondoesnotexist.com' />" +
                 "</body></html>";
-        miVisorWeb.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-
-
+        String html2 = "<html><body><h1>Hola Mundo</h1><br><br><p>Esto es una prueba de WebView</p><iframe src='https://thispersondoesnotexist.com' width='100%' height='300'></iframe></body></html>";
+        miVisorWeb.loadDataWithBaseURL("https://", html, "text/html", "UTF-8", null);
     }
 
     public void showAlertDialogButtonClicked(MainActivity mainActivity) {
@@ -65,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         builder.setTitle("Dialogo");
-        builder.setMessage("¿Que quieres hacer?");
+        builder.setMessage("¿What u want?");
         builder.setIcon(R.drawable.usericon);
         builder.setCancelable(true);
 
 
 
-        builder.setPositiveButton("Scrolling", new DialogInterface.OnClickListener()  {
+        builder.setPositiveButton("Scrolling", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(MainActivity.this, Login.class);
@@ -79,13 +77,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        builder.setNegativeButton("Nada", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Nothing", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(MainActivity.this, MainBar.class);
+                startActivity(intent);
             }
         });
 
-        builder.setNeutralButton("Otro", new DialogInterface.OnClickListener() {
+        builder.setNeutralButton("Other", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 System.exit(0);
@@ -97,40 +97,45 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void onCreateContextMenu(ContextMenu menu, View v,
-                                    ContextMenu.ContextMenuInfo menuInfo) {
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         getMenuInflater().inflate(R.menu.menu_context, menu);
     }
 
-    public boolean onContextItemSelected(MenuItem item) {
-//        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)
-//                item.getMenuInfo();
+    public boolean onContextItemSelected(MenuItem item){
         if (item.getItemId() == R.id.item1) {
-            Toast toast = Toast.makeText(this, "Item copied",
-                    Toast.LENGTH_LONG);
+            Toast toast= Toast.makeText(this, "Item copied", Toast.LENGTH_SHORT);
             toast.show();
         } else if (item.getItemId() == R.id.item2) {
-            Toast toast2 = Toast.makeText(this, "Downloading item...",
-                    Toast.LENGTH_LONG);
+            Toast toast2= Toast.makeText(this, "Downloading item", Toast.LENGTH_SHORT);
             toast2.show();
         }
         return false;
     }
-
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_appbar, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.item2) {
-            Toast toast = Toast.makeText(this, "Settings", Toast.LENGTH_SHORT);
+        if (id == R.id.item1) {
+            Toast toast= Toast.makeText(this, "Settings", Toast.LENGTH_SHORT);
             toast.show();
-        } else if (id == R.id.item1) {
-            Toast toast2 = Toast.makeText(this, "Copy", Toast.LENGTH_SHORT);
+        } else if (id == R.id.item2) {
+            Toast toast2= Toast.makeText(this, "Copy", Toast.LENGTH_SHORT);
             toast2.show();
+        } else if (id == R.id.item4)
+        {
+            Intent intent = new Intent(MainActivity.this, MainBar.class);
+            startActivity(intent);
+        }
+
+        if (id == R.id.item3)
+        {
+            showAlertDialogButtonClicked(MainActivity.this);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -142,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             //Toast toast0 = Toast.makeText(MainActivity.this, "Hi there! I don't exist :)", Toast.LENGTH_LONG);
             //toast0.show();
 
-            final ConstraintLayout mLayout = findViewById(R.id.myswipe);
+            final ConstraintLayout mLayout = findViewById(R.id.myMainConstraint);
 
 
             Snackbar snackbar = Snackbar
@@ -156,12 +161,9 @@ public class MainActivity extends AppCompatActivity {
                     });
 
             snackbar.show();
-//
-
 
             miVisorWeb.reload();
             swipeLayout.setRefreshing(false);
         }
     };
-
 }
