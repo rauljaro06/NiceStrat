@@ -1,32 +1,35 @@
-
 # NiceStrat
 
 Aplicación Android desarrollada en *Java* con *Android Studio* como parte de un proyecto académico.  
-El objetivo principal es practicar el flujo de autenticación de un usuario (login / registro) y la navegación entre pantallas.
+El objetivo principal es practicar el flujo de autenticación de un usuario (login / registro), la navegación entre pantallas y la implementación de funcionalidades modernas como el *modo noche* y una *barra de navegación inferior (Bottom Bar)*.
 
 ---
 
-## Capturas de Pantalla
+## 📸 Capturas de Pantalla
 
-A continuación, se presentan algunas capturas de pantalla de como se verian las pantallas principales de la aplicación:
+A continuación, se presentan algunas capturas de pantalla de como se verían las pantallas principales de la aplicación:
 
 ### Registro
-Esta es nuestra pantalla de registro
+Pantalla de registro de nuevos usuarios  
 ![Registrar](img/foto1.png)
 
 ### Inicio de Sesión
-Esta es la pantalla en la cual realizamos el login a la aplicaion
+Pantalla de inicio de sesión de la aplicación  
 ![Login](img/foto2.png)
 
 ### Vista Principal
-Este seria el main de nuestra aplicacion
+Pantalla principal de la aplicación tras iniciar sesión  
 ![Main](img/foto3.png)
 
 ### Pantalla de Carga
-Esta es la pantalla de carga de la aplicacion al inicializarla
+Pantalla de carga mostrada al iniciar la aplicación  
 ![Splash](img/foto4.png)
 
+---
+
 ## 📱 Funcionalidades
+
+### 🔐 Autenticación
 
 - *Pantalla de inicio de sesión (Login)*
     - Campos de usuario y contraseña.
@@ -34,12 +37,26 @@ Esta es la pantalla de carga de la aplicacion al inicializarla
     - Acceso directo a la pantalla de registro.
 
 - *Pantalla de registro (Sign Up)*
-    - Campos de usuario, email, contraseña y repetición de contraseña.
-    - Botón para crear la cuenta.
-    - Botón de cancelar para volver a la pantalla de login.
+    - Campos de usuario, email, contraseña y confirmación de contraseña.
+    - Botón para crear una nueva cuenta.
+    - Opción para cancelar y volver al login.
 
-- *Pantalla principal*
-    - Vista sencilla con el texto de prueba *“Hello World!”*, que actúa como pantalla de inicio tras el login.
+---
+
+### 🧭 Navegación principal (Bottom Bar)
+
+- Implementación de una *barra de navegación inferior (Bottom Bar)*.
+- Permite cambiar entre las distintas secciones principales de la aplicación de forma rápida e intuitiva.
+- La Bottom Bar se mantiene visible en la pantalla principal para mejorar la experiencia de usuario y la navegación.
+
+---
+
+### 🌙 Modo Noche (Dark Mode)
+
+- Implementación de *modo noche* utilizando el sistema de temas Day/Night de Android.
+- Posibilidad de activar o desactivar el modo noche desde la aplicación.
+- La preferencia del usuario se guarda y se mantiene incluso al cerrar y volver a abrir la app.
+- Mejora la accesibilidad y la comodidad visual en entornos con poca luz.
 
 ---
 
@@ -49,43 +66,54 @@ Esta es la pantalla de carga de la aplicacion al inicializarla
 - *Entorno de desarrollo:* Android Studio
 - *SDK:* Android SDK
 - *Sistema de construcción:* Gradle
+- *Diseño UI:* XML
+- *Componentes:* Material Design (Bottom Navigation, temas Day/Night)
 
 ---
 
 ## ✅ Requisitos del programa
 
-Para compilar y ejecutar el proyecto necesitas:
+Para compilar y ejecutar el proyecto es necesario:
 
-- *JDK 11 o superior* (según la configuración del proyecto).
-- *Android Studio* (obligatorio).
-- Emulador de Android o dispositivo físico para ejecutar la app.
+- *JDK 11 o superior*
+- *Android Studio*
+- Emulador de Android o dispositivo físico compatible
 
 ---
 
 ## 📂 Estructura del proyecto
 
-Las rutas pueden variar ligeramente según el paquete configurado en Android Studio, pero la estructura principal es:
+La estructura principal del proyecto es la siguiente:
 
 - app/src/main/java/
-    - Login.java – Lógica de la ventana de *inicio de sesión*.
-    - MainActivity.java – Lógica de la *pantalla principal* de la app.
-    - SingUp.java – Lógica de la ventana de *registro de nueva cuenta*.
+    - Login.java – Lógica de la pantalla de inicio de sesión.
+    - SingUp.java – Lógica de la pantalla de registro.
+    - MainActivity.java – Pantalla principal con Bottom Bar.
+    - (Clases adicionales para gestión de tema y navegación)
 
 - app/src/main/res/layout/
-    - activity_login.xml – Diseño (frontend) de la pantalla de *login*.
-    - activity_main.xml – Diseño de la *vista principal*.
-    - activity_sing_up.xml – Diseño de la pantalla de *registro*.
+    - activity_login.xml – Diseño de la pantalla de login.
+    - activity_sing_up.xml – Diseño de la pantalla de registro.
+    - activity_main.xml – Diseño de la pantalla principal con Bottom Bar.
 
-- app/src/main/AndroidManifest.xml – *Manifest* del módulo con la configuración de actividades y permisos.
+- app/src/main/res/menu/
+    - Menú de navegación inferior (Bottom Bar).
+
+- app/src/main/res/values/
+    - Archivos de colores y temas (modo claro).
+
+- app/src/main/res/values-night/
+    - Archivos de temas para modo noche.
+
+- app/src/main/AndroidManifest.xml – Configuración de actividades y permisos.
 
 - img/
-    - foto1.png – Screenshot de la pantalla de *login*.
-    - foto2.png – Screenshot de la pantalla de *registro*.
-    - foto3.png – Screenshot de la *pantalla principal* (Hello World).
+    - Capturas de pantalla de la aplicación.
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+
+
 
 
 
